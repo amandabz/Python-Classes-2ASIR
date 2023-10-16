@@ -55,12 +55,14 @@ def even_and_odd_numbers():
         if value % 2 == 0:
             if value not in even_list_number:
                 even_list_number.append(value)
-                even_list_number.sort(reverse=False)  # reverse=False : orden descendente
 
         else:
             if value not in odd_list_number:
                 odd_list_number.append(value)
-                odd_list_number.sort(reverse=False)  # reverse=False : orden descendente
+
+    # saco los .sort fuera del for para que no se ordenen en bucle y solo lo hagan 1 vez
+    odd_list_number.sort(reverse=False)  # reverse=False : orden descendente
+    even_list_number.sort(reverse=False)  #
 
     print("Even: " + str(even_list_number))
     print("Odd: " + str(odd_list_number))
@@ -76,8 +78,8 @@ times = []
 
 
 def minutes_and_seconds():
-    for i in range(11):  # printea 10 valores
-        value = random.randrange(100, 1001)
+    for i in range(10):  # printea 10 valores
+        value = random.randrange(100, 1000)
         minutes = value // 60
         seconds = value % 60
 

@@ -1,6 +1,6 @@
 # sacar por pantalla: el identificador de ipasen
 
-def ipasenIdentificator():
+def ipasen_identificator():
 
     # print(nombre)
     nombre = input("Escriba su nombre (sin apellidos): ")
@@ -20,8 +20,5 @@ def ipasenIdentificator():
 
     print(identificador)
 
-ipasenIdentificator()
 
-
-
-
+ipasen_identificator()

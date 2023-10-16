@@ -1,4 +1,4 @@
-def confirmOddEvenNumber():
+def confirm_odd_even_number():
     
     num = int(input("Enter a number: "))
 
@@ -8,4 +8,4 @@ def confirmOddEvenNumber():
         print("{0} is Odd".format(num))
 
 
-confirmOddEvenNumber()
+confirm_odd_even_number()
