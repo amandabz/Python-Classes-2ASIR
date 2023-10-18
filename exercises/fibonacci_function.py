@@ -12,8 +12,8 @@ def fibonacci(number):
     :return:
     """
 
-    sum_in_secuence_def = sequence[-1] + sequence[-2]
-    sequence.append(sum_in_secuence_def)
+    sum_in_def_sequence = sequence[-1] + sequence[-2]
+    sequence.append(sum_in_def_sequence)
 
     if number != len(sequence):
         fibonacci(number)
@@ -28,8 +28,8 @@ number = 15
 
 while number != len(sequence):
 
-    sum_in_secuence_while = sequence[-1] + sequence[-2]
-    sequence.append(sum_in_secuence_while)
+    sum_in_while_sequence = sequence[-1] + sequence[-2]
+    sequence.append(sum_in_while_sequence)
 
 print(sequence)
 
