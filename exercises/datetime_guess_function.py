@@ -6,8 +6,10 @@ def guess_function_with_attemps_and_time():
     random_value = random.randrange(1, 100)
     print(random_value)
 
-    number = -1
+    number = 0
     attempts = 0
+
+    # time spend
     start_time = datetime.datetime.now()
 
     while random_value != number:
@@ -20,10 +22,11 @@ def guess_function_with_attemps_and_time():
         # time spend
         end_time = datetime.datetime.now()
         time_difference = end_time - start_time
-        formatted_time = str(time_difference).split(".")[0]
+        minutes = time_difference.total_seconds() // 60
+        seconds = time_difference.total_seconds() % 60
 
         if number == random_value:
-            print(f"¡Acertaste en {attempts} intentos y has tardado {formatted_time}!")
+            print(f"¡Acertaste en {attempts} intentos y has tardado {int(minutes)} minutos y {int(seconds)} segundos!")
             break
 
         elif number > 100:
