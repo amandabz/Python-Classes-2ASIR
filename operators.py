@@ -1,4 +1,4 @@
- #operators
+# operators
 
 # % : te da el resto de la división
 x = 46

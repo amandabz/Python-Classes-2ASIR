@@ -2,9 +2,9 @@ import random
 import datetime
 
 
-def guess_function_with_attemps_and_time():
+def guess_function_with_attemps_and_time_spend():
     random_value = random.randrange(1, 100)
-    print(random_value)
+    # print(random_value)
 
     number = 0
     attempts = 0
@@ -39,4 +39,4 @@ def guess_function_with_attemps_and_time():
             print("Frío...")
 
 
-guess_function_with_attemps_and_time()
+guess_function_with_attemps_and_time_spend()
