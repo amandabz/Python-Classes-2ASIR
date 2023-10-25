@@ -33,6 +33,7 @@ while not age:
         break
 
     finally:
+        print(age)
         print("---------")
 
 
