@@ -1,0 +1,17 @@
+
+
+
+New Student:
+Name: Amanda
+Surname: Benitez
+ID: 77684122N
+Born date: 27/01/2004
+
+
+New Student:
+Name: Juan
+Surname: Perez
+ID: 123456789P
+Born date: 09/10/1956
+
+
