@@ -160,5 +160,5 @@ cython_debug/
 .idea/
 
 # My Stuff
-mongodb/credentials.txt
+mongodb/MongoCrendentials.txt
 
