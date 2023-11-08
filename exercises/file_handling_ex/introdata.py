@@ -22,7 +22,7 @@ def add_student_to_students_file():
             dni = input("DNI: ")
             born_date = input("Born date (dd/mm/yyyy): ")
 
-            # check if the DNI already exists in the file
+            # check if the ID already exists in the file
             dni_exists = False
 
             with open("students.txt", "r") as file:

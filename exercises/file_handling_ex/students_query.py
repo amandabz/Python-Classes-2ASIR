@@ -14,7 +14,6 @@ from datetime import datetime
 
 
 def search_studends_in_students_file():
-
     today_date = datetime.now()
 
     with open("students.txt", "r") as file:
@@ -38,7 +37,7 @@ def search_studends_in_students_file():
                 if f"ID: {dni_to_search}" in line:
                     is_found = True
 
-                    info = lines[index -2:index +2]
+                    info = lines[index - 2:index + 2]
                     name = info[0].split(":")[-1].strip()
                     surname = info[1].split(":")[-1].strip()
 
@@ -47,9 +46,9 @@ def search_studends_in_students_file():
                     age = today_year - int(born_date_year)
 
                     print(f"""STUDENT QUERY:
-    Surname, name: {surname}, {name}
-    Age: {age}
-    """)
+Surname, name: {surname}, {name}
+Age: {age}
+""")
                     with open("access.log", "a") as log_file:
                         log_file.write(f"""{today_date}:
 Search for the student {name} in the student file.
@@ -58,7 +57,7 @@ Search for the student {name} in the student file.
                     break  # when it finds the ID, it stops scrolling through the file
 
             if not is_found:
-                print("It has not been possible found a student with that DNI")
+                print("It has not been possible found a student with that ID")
 
 
 search_studends_in_students_file()
