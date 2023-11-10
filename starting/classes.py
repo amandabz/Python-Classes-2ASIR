@@ -29,3 +29,7 @@ else:
 # if __name__ == '__main__':
     # execute when the module is not initialized from an import statement.
 
+class Child:
+    pass
+
+# use the 'pass' keyword when you do not want to add any other properties or methods to the class.
