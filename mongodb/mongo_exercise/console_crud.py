@@ -43,7 +43,7 @@ Your option: """).strip()
 
             students_col.insert_one(data_dict)
 
-            print("Student added to Students database")
+            print("Student added")
 
         elif option_choose == "2":
             print("You are going to search a student")
@@ -60,7 +60,7 @@ Your option: """).strip()
 
             dni_to_delete = input("Please, enter a DNI to delete a student: ")
             dni = {"dni": dni_to_delete}
-            students_db.delete_one(dni)
+            students_col.delete_one(dni)
 
             print("Student deleted")
 
