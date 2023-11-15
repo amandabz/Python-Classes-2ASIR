@@ -28,7 +28,7 @@ Your option: """).strip()
             print("See you soon!")
             break
 
-        elif options == "1":
+        elif option_choose == "1":
             print("You are going to create a student")
 
             name = input("What is the name of the student?: ")
@@ -51,7 +51,7 @@ Your option: """).strip()
             dni_to_search = input("Please, enter a DNI to search a student: ")
 
             dni = {"dni": dni_to_search}
-            student_data = students_col.find(dni)  # return the customer data with that dni
+            student_data = students_col.find(dni)  # return the student data with that dni
             for data in student_data:
                 print(data)
 
@@ -97,7 +97,7 @@ Your option: """).strip()
 
                         print("Student name modified")
 
-                        # Print student collection after the update
+                        # print student collection after the update
                         for data in students_col.find():
                             print(data)
 
@@ -108,12 +108,12 @@ Your option: """).strip()
                         dni_query = {"dni": dni_search_to_modify}
                         update_data = {"$set": {"surname": new_value_surname}}
 
-                        # Update the document with the new name
+                        # update the document with the new surname
                         students_col.update_one(dni_query, update_data)
 
                         print("Student surname modified")
 
-                        # Print student collection after the update
+                        # print student collection after the update
                         for data in students_col.find():
                             print(data)
 
@@ -124,12 +124,12 @@ Your option: """).strip()
                         dni_query = {"dni": dni_search_to_modify}
                         update_data = {"$set": {"dni": new_value_dni}}
 
-                        # Update the document with the new name
+                        # Update the document with the new dni
                         students_col.update_one(dni_query, update_data)
 
                         print("Student DNI modified")
 
-                        # Print student collection after the update
+                        # print student collection after the update
                         for data in students_col.find():
                             print(data)
 
