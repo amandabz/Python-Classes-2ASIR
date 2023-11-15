@@ -1,5 +1,6 @@
-import pymongo
+# import pymongo
 
+"""
 # connection with my client
 myclient = pymongo.MongoClient("mongodb://localhost:27017")
 
@@ -13,7 +14,6 @@ mydb = myclient["mydb"]
 # remember: In MongoDB, a collection is not created until it gets content!
 mycol = mydb["customers"]
 
-"""
 # insert data
 # "_id": 1 <-- if I use it, I can controll the _ids
 my_data_list = [
@@ -36,7 +36,6 @@ insert_data = mycol.insert_many(my_data_list)
 
 # print list of the _id values of the inserted data
 print(insert_data.inserted_ids)
-"""
 
 # find_one: returns the first ocurrence
 find_one = mycol.find_one()
@@ -78,7 +77,6 @@ mycol.delete_one(myquery)  # delete the customer data with that name
 x = mycol.delete_many(myadvancedquery)  # delete costumers where the name starts with the letter "S" or higher.
 print(x.deleted_count, " documents deleted")
 
-
 # drop collection = delete table
 # mycol.drop()
 
@@ -86,3 +84,4 @@ print(x.deleted_count, " documents deleted")
 # my_update_query = { "address": "Valley 345" }
 # newvalues = { "$set": { "address": "Canyon 123" } }
 # mycol.update_one(myquery, newvalues)
+"""
