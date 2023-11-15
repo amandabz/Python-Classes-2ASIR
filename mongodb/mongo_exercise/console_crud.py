@@ -18,7 +18,7 @@ Choose an option:
     3. Delete Student
     4. Modify Student
     5. Exit
-Your option: """).strip()
+Your option (Enter the number): """).strip()
 
         if option_choose not in ["1", "2", "3", "4", "5"]:
             print("Please, choose an available option")
@@ -68,10 +68,10 @@ Your option: """).strip()
             print("You are going to modify a student")
             value_to_modify = input("""
 Choose one value to modify:
-1. Name
-2. Surname
-3. DNI
-Your option: """).strip()
+    1. Name
+    2. Surname
+    3. DNI
+Your option (Enter the number): """).strip()
 
             if value_to_modify not in ["1", "2", "3"]:
                 print("Please, choose an available option")
