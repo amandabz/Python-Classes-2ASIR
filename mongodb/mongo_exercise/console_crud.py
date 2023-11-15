@@ -92,14 +92,14 @@ Your option: """).strip()
                         dni_query = {"dni": dni_search_to_modify}
                         update_data = {"$set": {"name": new_value_name}}
 
-                        # Update the document with the new name
+                        # update the document with the new name
                         students_col.update_one(dni_query, update_data)
 
                         print("Student name modified")
 
-                        # print student collection after the update
-                        for data in students_col.find():
-                            print(data)
+                        # print student data after the update
+                        modified_student = students_col.find_one({"name": new_value_name})
+                        print(f"New data of the modified student: {modified_student}")
 
                     elif value_to_modify == "2":
                         print("You are going to modify the student surname")
@@ -113,9 +113,9 @@ Your option: """).strip()
 
                         print("Student surname modified")
 
-                        # print student collection after the update
-                        for data in students_col.find():
-                            print(data)
+                        # print student data after the update
+                        modified_student = students_col.find_one({"surname": new_value_surname})
+                        print(f"New data of the modified student: {modified_student}")
 
                     elif value_to_modify == "3":
                         print("You are going to modify the student dni")
@@ -129,9 +129,9 @@ Your option: """).strip()
 
                         print("Student DNI modified")
 
-                        # print student collection after the update
-                        for data in students_col.find():
-                            print(data)
+                        # print student data after the update
+                        modified_student = students_col.find_one({"dni": new_value_dni})
+                        print(f"New data of the modified student: {modified_student}")
 
                 else:
                     print("There is not a student with that DNI")
