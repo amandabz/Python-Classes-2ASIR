@@ -71,7 +71,6 @@ Your option (Enter the number): """).strip()
                     print("You are going to modify the student name")
                     new_value_name = input("Please, enter the new name: ")
 
-                    dni_query = {"dni": dni_search_to_modify}
                     update_data = {"$set": {"name": new_value_name}}
 
                     # update the document with the new name
@@ -87,7 +86,6 @@ Your option (Enter the number): """).strip()
                     print("You are going to modify the student surname")
                     new_value_surname = input("Please, enter the new surname: ")
 
-                    dni_query = {"dni": dni_search_to_modify}
                     update_data = {"$set": {"surname": new_value_surname}}
 
                     # update the document with the new surname
@@ -103,7 +101,6 @@ Your option (Enter the number): """).strip()
                     print("You are going to modify the student dni")
                     new_value_dni = input("Please, enter the new DNI: ")
 
-                    dni_query = {"dni": dni_search_to_modify}
                     update_data = {"$set": {"dni": new_value_dni}}
 
                     # Update the document with the new dni
@@ -152,3 +149,9 @@ Your option (Enter the number): """).strip()
 
 
 console_crud()
+
+# Close connection
+client.close()
+
+
+
