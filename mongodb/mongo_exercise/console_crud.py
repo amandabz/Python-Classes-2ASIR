@@ -10,9 +10,9 @@ students_col = students_db["students"]
 
 
 def create_student():
-    name = input("What is the name of the student?: ")
-    surname = input("What is the surname of the student?: ")
-    dni = input("What is the dni of the student?: ")
+    name = input("What is student's name?: ")
+    surname = input("What is the student's surname?: ")
+    dni = input("What is the student's ID number?: ")
 
     data_dict = {
         "name": name,
