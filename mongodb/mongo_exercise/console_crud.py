@@ -150,7 +150,7 @@ Your option (Enter the number): """).strip()
 
 console_crud()
 
-# Close connection
+# close connection
 client.close()
 
 
