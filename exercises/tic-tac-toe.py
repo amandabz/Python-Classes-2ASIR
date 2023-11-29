@@ -1,14 +1,14 @@
 import random
 
 board = [
-    ["0", "1", "2"],
-    ["3", "4", "5"],
-    ["6", "7", "8"]
+    ["█", "█", "█"],
+    ["█", "█", "█"],
+    ["█", "█", "█"]
 ]
 
 
 def draw_game():
-    if all(str(num) not in [item for sublist in board for item in sublist] for num in range(9)):
+    if all(cell != "█" for row in board for cell in row):
         return True
     return False
 
@@ -39,10 +39,10 @@ def check_winner(current_player):
 
 
 def computer_move():
-    available_positions = [num for row in board for num in row if num.isdigit()]
+    available_positions = [(i, j) for i, row in enumerate(board) for j, cell in enumerate(row) if cell == "█"]
 
     if available_positions:
-        return int(random.choice(available_positions))
+        return random.choice(available_positions)
     return None
 
 
@@ -60,10 +60,9 @@ def main():
                     row = movement // 3
                     col = movement % 3
 
-                    if board[row][col] != "X" and board[row][col] != "O":
+                    if board[row][col] == "█":
                         board[row][col] = "O"
 
-                        # check if the human is the winner
                         if check_winner("O"):
                             print_board()
                             print("Player with O icon wins!")
@@ -74,10 +73,9 @@ def main():
                             break
 
                     else:
-                        print("Cell already taken. Try again.")
+                        print("Cell already taken or invalid. Try again.")
                         continue
 
-                    # switch player
                     current_player = "X" if current_player == "O" else "O"
 
                 else:
@@ -88,26 +86,23 @@ def main():
                 print("Please, enter a number between 0 and 8")
 
         else:
-            # computer's move
             print("Computer's move:")
             computer_position = computer_move()
 
-            row = computer_position // 3
-            col = computer_position % 3
-            board[row][col] = "X"
+            if computer_position:
+                row, col = computer_position
+                board[row][col] = "X"
 
-            # check if the computer is the winner
-            if check_winner("X"):
-                print_board()
-                print("Player with X icon wins!")
-                break
+                if check_winner("X"):
+                    print_board()
+                    print("Player with X icon wins!")
+                    break
 
-            elif draw_game():
-                print("We have a draw!")
-                break
+                elif draw_game():
+                    print("We have a draw!")
+                    break
 
-            # switch player
-            current_player = "O"
+                current_player = "O"
 
 
 if __name__ == "__main__":
