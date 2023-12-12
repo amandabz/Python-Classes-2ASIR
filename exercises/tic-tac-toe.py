@@ -7,15 +7,15 @@ board = [
 ]
 
 
-def draw_game():
-    if all(cell != "█" for row in board for cell in row):
-        return True
-    return False
-
-
 def print_board():
     for row in board:
         print("|", " | ".join(row), "|")
+
+
+def draw_game():
+    if all(position != "█" for row in board for position in row):
+        return True
+    return False
 
 
 def check_winner(current_player):
@@ -39,7 +39,8 @@ def check_winner(current_player):
 
 
 def computer_move():
-    available_positions = [(i, j) for i, row in enumerate(board) for j, cell in enumerate(row) if cell == "█"]
+    available_positions = [(index, j) for index, row in enumerate(board)
+                           for j, position in enumerate(row) if position == "█"]
 
     if available_positions:
         return random.choice(available_positions)
